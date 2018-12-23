@@ -21,6 +21,14 @@ main .subcategory-wrap .chip {
     justify-content: center;
 }
 
+.subcategory-wrap .card .card-content {
+    padding: 12px;
+}
+
+.card .card-content .card-title {
+    font-size: 1.2rem !important;
+}
+
 .subcategory-wrap .card .card-image img {
     width: 100%;
 }
@@ -32,6 +40,14 @@ main .subcategory-wrap .chip {
 
 aside > ul > li > a.truncate {
     white-space: normal;
+}
+
+aside#column-left .collapsible-header {
+    /*padding-right: 1.5rem;*/
+}
+
+aside#column-left .collapsible-header .new-badge[data-badge]::after {
+    /*right: -23px;*/
 }
 
 .bg-image {
