@@ -3,7 +3,7 @@ main .subcategory-wrap .chip {
     max-width: none;
 }
 
-.empty-cat {
+.empty-cat, .hidden {
     display: none;
 }
 
@@ -18,7 +18,20 @@ main .subcategory-wrap .chip {
     align-items: stretch;
     align-content: center;
     flex-flow: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.subcategory-wrap a .chip {
+    font-size: 1.2rem;
+    padding: 5px 16px;
+    height: auto;
+    border-radius: 40px;
+    color: white;
+}
+
+.subcategory-wrap a:hover .chip {
+    color: yellow;
+    background-color: #B62020 !important;
 }
 
 .subcategory-wrap .card .card-content {
@@ -52,4 +65,127 @@ aside#column-left .collapsible-header .new-badge[data-badge]::after {
 
 .bg-image {
     background-image: url('../image/banner_elka.jpg');
+}
+
+.page-footer .footer-copyright {
+    display: none !important;
+}
+
+
+.container-sidebar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.sidebar {
+    width: 300px;
+    position: relative;
+}
+
+@media only screen and (max-width:992px) {
+    .sidebar {
+        width: 0px;
+        display: none;
+    }
+}
+
+.maindata {
+    width: 500px;
+    position: relative;
+    flex-grow: 10;
+}
+
+aside.sidenav-fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    overflow-x: visible !important;
+    overflow-y: auto;
+}
+
+ul.collection.megamenu {
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav .megamenu > li.collection-header {
+    border-width: 0px !important;
+}
+
+.sidenav .megamenu > li > a {
+    line-height: 24px !important;
+    padding: 10px !important;
+    font-weight: 500 !important;
+}
+
+.sidenav .megamenu > li > a:hover {
+    text-decoration: none;
+    background-color: #607d8b;
+    color: #FFF !important;
+}
+
+.collection.with-header .collection-header {
+    border-bottom: 1px solid #90AdCb !important;
+}
+
+
+
+@media only screen and (min-width:1600px) {
+    .row .col.xxl3 {
+        width: 25% !important;
+    }
+}
+
+
+
+.footer-sn__item {
+    flex-basis: content !important;
+}
+
+.footer-sn__item img {
+    width: 40px !important;
+}
+
+
+
+
+ul.megamenu-cat {
+    position: fixed;
+    left: 300px;
+    top: 0px;
+    right: 100px;
+    height: 100%;
+    margin: 0;
+    padding: 10px !important;
+    background: #FFF;
+    display: none;
+    z-index: 10000;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.megamenu-cat > li > a.second {
+    font-weight: 600;
+    color: #1B5E20;
+    padding: 1px 3px;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.megamenu-cat > li > a.third {
+    font-size: .8rem;
+    margin-left: 10px;
+    color: #455a64;
+}
+
+.megamenu-cat.opened {
+    display: flex;
+    grid-auto-flow: column;
 }

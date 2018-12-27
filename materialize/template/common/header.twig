@@ -69,9 +69,18 @@
 	<![endif]-->
 </head>
 <body class="{{ color_background }}">
+
+	<div class="container-sidebar">
+
+	<div class="sidebar">
+		sidebar
+	</div>
+
+	<div class="maindata">
+
 	<header class="href-underline">
-		<div class="row hide-on-small-only {{ color_top_menu }}">
-			<nav class="container transparent z-depth-0 top-menu">
+		<div class="row hide-on-med-and-down {{ color_top_menu }}">
+			<nav class="container-fluid transparent z-depth-0 top-menu">
 				<div class="nav-wrapper">
 					{% if language or currency %}
 					<ul class="left">
@@ -103,14 +112,15 @@
 								{% endif %}
 							</ul>
 						</li>
+						<li><a class="waves-effect waves-light {{ color_top_menu_text }}" href="/sitemap">{{ text_sitemap }}</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
 		<div class="row top-container {{ color_header }} bg-image">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="valign-wrapper">
-					<div class="col s12 m4">
+					<div class="col s12 l4">
 						{% if logo %}
 						<a href="{{ home }}">
 							<img id="logo-img" class="responsive-img lazyload" src="{{ img_loader }}" data-src="{{ logo }}" title="{{ name }}" alt="{{ name }}">
@@ -119,7 +129,7 @@
 						<strong><a href="{{ home }}" class="{{ color_header_text }}">{{ name }}</a></strong>
 						{% endif %}
 					</div>
-					<div class="col m8 right-align hide-on-small-only {{ color_header_text }}">
+					<div class="col m8 right-align hide-on-med-and-down {{ color_header_text }}">
 						<a class="href-underline text-bold flow-text block {{ color_header_text }}" href="tel:{{ telephone }}">{{ telephone }}</a>
 						<ul class="right contact-info">
 							<li><a href="mailto:{{ email }}" class="{{ color_header_text }}"><i class="material-icons left">email</i>{{ email }}</a></li>
@@ -133,21 +143,21 @@
 			</div>
 		</div>
 		<div id="fixed-nav-wrapper">
-			<nav id="header-navigation" class="hide-on-small-only pin-top {{ color_navigation }}">
-				<div class="nav-wrapper container">
+			<nav id="header-navigation" class="hide-on-med-and-down pin-top {{ color_navigation }}">
+				<div class="nav-wrapper container-fluid">
 					<div class="row">
 						<ul>
-							<li class="col m3">
+							<li class="col m3 hidden">
 							{{ menu }}
 							</li>
-							<li class="col m9">
+							<li class="col m12">
 							{{ search }}
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<button type="button" data-target="slide-out" id="btn-side-menu" class="sidenav-trigger hide-on-med-and-up btn-floating btn-large waves-effect waves-circle waves-light z-depth-4 {{ color_nav_btn }}"><i class="material-icons {{ color_nav_btn_text }}">menu</i></button>
+			<button type="button" data-target="slide-out" id="btn-side-menu" class="sidenav-trigger hide-on-large-only btn-floating btn-large waves-effect waves-circle waves-light z-depth-4 {{ color_nav_btn }}"><i class="material-icons {{ color_nav_btn_text }}">menu</i></button>
 			<ul id="slide-out" class="sidenav"><li class="progress"><div class="indeterminate"></div></li></ul>
 		</div>
 	</header>

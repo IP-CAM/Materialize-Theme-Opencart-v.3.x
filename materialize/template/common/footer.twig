@@ -1,7 +1,7 @@
 {% spaceless %}
 {% if footer_title or footer_description or footer_contact %}
 	{% if social_network %}
-		{% set col_information, col_extra, col_account, col_social_network = 's12 m6','s12 m6', 's12 m6', 's12 m6' %}
+		{% set col_information, col_extra, col_account, col_social_network = 's6 m6','s6 m6', 's6 m6', 's6 m6' %}
 	{% else %}
 		{% set col_information, col_extra, col_account = 's12 m6', 's12 m6', 's12 m6' %}
 	{% endif %}
@@ -13,10 +13,10 @@
 	{% endif %}
 {% endif %}
 <footer class="page-footer {{ color_footer }} {{ color_footer_text }}">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			{% if footer_title or footer_description or footer_contact %} <!-- Open footer info -->
-			<div class="col l6 s12 {{ color_footer_text }}">
+			<div class="col s12 m6 l6 {{ color_footer_text }}">
 				{% if footer_title %}<h5 class="text-bold">{{ footer_title }}</h5>{% endif %}
 				{% if footer_description %}<p>{{ footer_description }}</p>{% endif %}
 				{% if footer_contact %}
@@ -38,7 +38,7 @@
 				</ul>
 				{% endif %}
 			</div>
-			<div class="col s12 l5 offset-l1">
+			<div class="col s12 m5 l5 offset-l1">
 				<div class="row">
 				{% endif %} <!-- ./ end footer info -->
 					{% if informations %}
@@ -48,11 +48,12 @@
 							{% for information in informations %}
 							<li><a class="{{ color_footer_text }}" href="{{ information.href }}">{{ information.title }}</a></li>
 							{% endfor %}
+							<li><a class="{{ color_footer_text }}" href="/sitemap">{{ text_sitemap }}</a></li>
 							<li><a class="{{ color_footer_text }}" href="{{ contact }}">{{ text_contact }}</a></li>
 						</ul>
 					</section>
 					{% endif %}
-					<section class="col {{ col_extra }}">
+					<section class="col {{ col_extra }} hidden">
 						<h5 class="text-bold">{{ text_extra }}</h5>
 						<ul>
 							<li><a class="{{ color_footer_text }}" href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
@@ -62,8 +63,6 @@
 						</ul>
 					</section>
 				{% if footer_title or footer_description or footer_contact %} <!-- Open footer info -->
-				</div>
-				<div class="row">
 				{% endif %} <!-- ./ end footer info -->
 					<section class="col {{ col_account }}">
 						<h5 class="text-bold">{{ text_account }}</h5>
@@ -103,6 +102,10 @@
 		</div>
 	</div>
 </footer>
+
+	</div>
+	</div>
+
 <button type="button" id="back-to-top" class="btn-floating btn-large scale-transition scale-out z-depth-4 waves-effect waves-light {{ color_btt }}"><i class="material-icons {{ color_btt_text }}">keyboard_arrow_up</i></button>
 <script defer src="catalog/view/theme/materialize/js/script.js"></script>
 </body></html>

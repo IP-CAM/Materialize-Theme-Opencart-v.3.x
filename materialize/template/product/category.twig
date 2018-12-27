@@ -33,14 +33,14 @@
 }
 </script>
 {% if column_left and column_right %}
-	{% set main, goods = 's12 l6', 's12' %}
-{% elseif column_left or column_right %}
-	{% set main, goods = 's12 l9', 's12 m6' %}
+	{% set main, goods = 's12 l9', 's12' %}
+{% elseif column_right %}
+	{% set main, goods = 's12 l9', 's12 m9' %}
 {% else %}
-	{% set main, goods = 's12', 's12 m6 xl4' %}
+	{% set main, goods = 's12', 's12 m6 l6 xl4 xxl3' %}
 {% endif %}
 <main>
-	<div class="container">
+	<div class="container-fluid">
 		<nav id="breadcrumbs" class="breadcrumb-wrapper transparent z-depth-0">
 			<span class="breadcrumb-blur hide-on-med-and-up"></span>
 			<div class="nav-wrapper breadcrumb-wrap href-underline">
@@ -60,45 +60,29 @@
 				<h1>{{ heading_title }}</h1>
 				{% if categories %}
 					<h3>{{ text_refine }}</h3>
-					<div class="subcategory-wrap row">
+					<div class="subcategory-wrap">
 						{% if categories|length <= 5 %}
 							{% for category in categories %}
-
-								<a href="{{ category.href }}" class="col s12 m6 l6 xl4 card-cat">
-								<div class="card">
-									<div class="card-image waves-effect waves-block waves-light">
+								<a href="{{ category.href }}">
+									<div class="chip red darken-3 waves-effect waves-default z-depth-1 truncate">
 										{% if category.thumb %}
-										<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ category.thumb }}" alt="{{ category.name }}">
-										{% else %}
-										<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="catalog/view/theme/materialize/image/empty_small.jpg" alt="{{ category.name }}">
+											<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ category.thumb }}" alt="{{ category.name }}">
 										{% endif %}
+										{{ category.name }}
 									</div>
-									<div class="card-content">
-										<span class="card-title grey-text text-darken-4">{{ category.name }}</span>
-									</div>
-								</div>
 								</a>
-
 							{% endfor %}
 						{% else %}
 							{% for category in categories|batch((categories|length / 4)|round(1, 'ceil')) %}
-								 {% for child in category %}
-
-									 <a href="{{ child.href }}" class="col s12 m6 l6 xl4 card-cat">
-										 <div class="card">
-											 <div class="card-image waves-effect waves-block waves-light">
-												 {% if category.thumb %}
-													 <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ child.thumb }}" alt="{{ child.name }}">
-												 {% else %}
-													 <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="catalog/view/theme/materialize/image/empty_small.jpg" alt="{{ child.name }}">
-												 {% endif %}
-											 </div>
-											 <div class="card-content">
-												 <span class="card-title grey-text text-darken-4">{{ child.name }}</span>
-											 </div>
-										 </div>
-									 </a>
-
+								{% for child in category %}
+									<a href="{{ child.href }}">
+										<div class="chip red darken-3 waves-effect waves-default z-depth-1 truncate">
+											{% if child.thumb %}
+												<img class="lazyload" src="" data-src="{{ child.thumb }}" alt="{{ child.thumb }}">
+											{% endif %}
+											{{ child.name }}
+										</div>
+									</a>
 								{% endfor %}
 							{% endfor %}
 						{% endif %}

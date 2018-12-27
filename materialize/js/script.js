@@ -497,4 +497,21 @@ $(document).ready(function() {
 			});
 		});
 
+
+	$('.megamenu > li > a').on('mouseenter', function(e) {
+		//e.preventDefault();
+		//$('#column-left').toggleClass('opened');
+		//console.log(childnode);
+		let childnode = $('#'+$(this).data('target')).detach();
+		$('body').append(childnode);
+		$('.megamenu-cat').removeClass('opened');
+		$(childnode).toggleClass('opened');
+	})
+	$('.megamenu-cat').on('click', function(e) {
+		$('.megamenu-cat').removeClass('opened');
+	});
+	$('.megamenu-cat').on('mouseleave', function(e) {
+		$('.megamenu-cat').removeClass('opened');
+	});
+
 });

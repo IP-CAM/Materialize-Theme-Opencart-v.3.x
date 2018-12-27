@@ -33,14 +33,14 @@
 }
 </script>
 {% if column_left and column_right %}
-	{% set main, image, product_info = 's12 m12 l6', 's12 m6 l12', 's12 m6 l12' %}
-{% elseif column_left or column_right %}
-	{% set main, image, product_info = 's12 l9', 's12 m6', 's12 m6' %}
+	{% set main, image, product_info = 's12 m12 l9', 's12 m9 l12', 's12 m9 l12' %}
+{% elseif column_right %}
+	{% set main, image, product_info = 's12 l9', 's12 m9', 's12 m9' %}
 {% else %}
 	{% set main, image, product_info = 's12', 's12 m6 xl5', 's12 m6 xl7' %}
 {% endif %}
 <main>
-	<div class="container">
+	<div class="container-fluid">
 		<nav id="breadcrumbs" class="breadcrumb-wrapper transparent z-depth-0">
 			<span class="breadcrumb-blur hide-on-med-and-up"></span>
 			<div class="nav-wrapper breadcrumb-wrap href-underline">
