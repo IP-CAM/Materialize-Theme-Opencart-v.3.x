@@ -46,6 +46,10 @@ footer {
     font-size: 1.2rem !important;
 }
 
+.card .card-image img {
+    margin-top: 15px !important;
+}
+
 .subcategory-wrap .card .card-image img {
     width: 100%;
 }
@@ -125,7 +129,7 @@ ul.collection.megamenu {
 
 .sidenav .megamenu > li > a {
     line-height: 24px !important;
-    padding: 10px !important;
+    padding: 7px !important;
     font-weight: 500 !important;
 }
 
@@ -193,4 +197,15 @@ ul.megamenu-cat {
 .megamenu-cat.opened {
     display: flex;
     grid-auto-flow: column;
+}
+
+
+.sidenav li > a {
+    height: auto !important;
+    font-size: 13px !important;
+    text-transform: lowercase;
+}
+
+.sidenav li > a:first-letter {
+    text-transform: capitalize;
 }
